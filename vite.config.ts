@@ -12,9 +12,8 @@ export default defineConfig({
   cloudflare: false,
   tanstackStart: {
     server: { entry: "server" },
-    // SPA mode shipped only the shell (empty <main>) and rendered every route
-    // client-side, causing a flash on load. Full SSR renders the page on the
-    // server — no flash, and better SEO for a marketing site.
-    spa: { enabled: false },
+    // Netlify is currently configured for static publish from dist/client.
+    // Keep SPA output enabled so _shell.html is generated for index fallback.
+    spa: { enabled: true },
   },
 });
