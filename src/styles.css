@@ -196,6 +196,19 @@
     100% { box-shadow: 0 0 0 0   oklch(0.78 0.20 145 / 0); }
   }
 
+  /* Slow decorative rotation for the mandala guide ring */
+  .mandala-ring {
+    transform-origin: 320px 320px;
+    transform-box: view-box;
+    animation: mandala-rotate 80s linear infinite;
+  }
+  @keyframes mandala-rotate {
+    to { transform: rotate(360deg); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .mandala-ring { animation: none; }
+  }
+
   /* Staggered reveal (small, subtle) */
   .reveal { opacity: 0; transform: translateY(10px); animation: reveal 0.6s cubic-bezier(.2,.7,.2,1) forwards; }
   .reveal-1 { animation-delay: 0.05s; }

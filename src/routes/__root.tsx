@@ -9,6 +9,8 @@ import {
 } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
 
 function NotFoundComponent() {
   return (
@@ -72,15 +74,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Brascin — Serviços Gerenciados de TI, Segurança, Nuvem e Backup" },
-      { name: "description", content: "Há 40 anos sustentando operações críticas de tecnologia. Parceiro estratégico em TI gerenciada, segurança, nuvem e backup corporativo." },
+      { title: "Brascin — Integradora de TI corporativa" },
+      { name: "description", content: "Arquiteturas, serviços gerenciados e parceria com os principais fabricantes de TI. Data Center, Segurança, Redes, Colaboração, Computação Pessoal e Nuvem." },
       { name: "author", content: "Brascin" },
-      { property: "og:title", content: "Brascin — Serviços Gerenciados de TI, Segurança, Nuvem e Backup" },
-      { property: "og:description", content: "Há 40 anos sustentando operações críticas de tecnologia. Parceiro estratégico em TI gerenciada, segurança, nuvem e backup corporativo." },
+      { property: "og:title", content: "Brascin — Integradora de TI corporativa" },
+      { property: "og:description", content: "Arquiteturas, serviços gerenciados e parceria com os principais fabricantes de TI. Data Center, Segurança, Redes, Colaboração, Computação Pessoal e Nuvem." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Brascin — Serviços Gerenciados de TI, Segurança, Nuvem e Backup" },
-      { name: "twitter:description", content: "Há 40 anos sustentando operações críticas de tecnologia. Parceiro estratégico em TI gerenciada, segurança, nuvem e backup corporativo." },
+      { name: "twitter:title", content: "Brascin — Integradora de TI corporativa" },
+      { name: "twitter:description", content: "Arquiteturas, serviços gerenciados e parceria com os principais fabricantes de TI. Data Center, Segurança, Redes, Colaboração, Computação Pessoal e Nuvem." },
       { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/bc9a6c3b-9e94-452a-a6c7-85708cc77f1e/id-preview-7eae9802--b1c8cfe6-29ce-4589-8cdc-c778bbf2c919.lovable.app-1778520479440.png" },
       { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/bc9a6c3b-9e94-452a-a6c7-85708cc77f1e/id-preview-7eae9802--b1c8cfe6-29ce-4589-8cdc-c778bbf2c919.lovable.app-1778520479440.png" },
     ],
@@ -120,7 +122,11 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Outlet />
+      <Header />
+      <main>
+        <Outlet />
+      </main>
+      <Footer />
     </QueryClientProvider>
   );
 }
